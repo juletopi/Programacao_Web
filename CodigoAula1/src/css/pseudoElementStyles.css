@@ -1,0 +1,18 @@
+/* Estilização da barra de rolagem */
+::-webkit-scrollbar {
+    background-color: #191625;
+    width: 10px;
+	height: 8px;
+}
+
+/* Estilização do indicador da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #6343d877;
+    border-radius: 8px;
+}
+
+/* Estilização da seleção de texto */
+::selection {
+    background-color: #6447ce9d;
+    color: #dbc0ff;
+}

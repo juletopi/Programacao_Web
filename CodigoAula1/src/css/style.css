@@ -1,0 +1,438 @@
+/* Estilização básica do corpo do documento */
+body {
+    font-family: DisposableDroidBB-Regular;
+    color: #dbc0ff;
+    background-color: #191625;
+}
+
+/* Estilização do container do efeito parallax na imagem de fundo */
+.parallax-container {
+    background-image: url('../images/espiralBackgroundImage.png'); 
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    position: relative;
+    overflow: hidden;
+}
+
+/* Usando ::before para adicionar uma camada de fundo dinâmica do efeito parallax na imagem de fundo */
+.parallax-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+/* Estilização da imagem no título principal da página */
+.main-title img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+/* Estilização do título principal da página */
+.main-title h1 {
+    font-family: "DisposableDroidBB-Bold";
+    font-size: 80px;
+    color: #dbc0ff;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    line-height: 0.7;
+    letter-spacing: -3px;
+}
+
+/* Estilização da parte "highlight" no título principal da página */
+.main-title h1 .main-title-highlight {
+    background: linear-gradient(45deg, #de96ff, #32335e, #5ca8f5);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Estilização da linha horizontal no título principal da página */
+.main-title hr {
+    border: none;
+    width: 60%;
+    height: 4px;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, transparent, #3f375fd3, transparent);
+}
+
+/* Estilização do parágrafo no título principal da página */
+.main-title p {
+    font-size: 32px;
+    margin-top: 26px;
+    padding-bottom: 160px;
+    text-align: center;
+    letter-spacing: -2px;
+}
+
+/* Estilização específica do emotico no título principal da página */
+.main-title strong {
+    font-family: Verdana;
+    font-size: 22px;
+}
+
+/* Estilização específica da parte em negrito do parágrafo no título principal da página */
+.main-title-emote {
+    font-family: Verdana;
+    font-size: 22px;
+}
+
+/* Estilização do container da seção "Sobre mim" da página */
+.about-me {
+    background: linear-gradient(to bottom, rgba(50, 51, 94, 0.6), rgba(50, 51, 94, 1)), #32335e;
+    color: #dbc0ff;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilização do título na seção "Sobre mim" da página */
+.about-me h2 {
+    color: #dbc0ff;
+    padding-right: 40px;
+    font-size: 120px;
+    flex: 0;
+    text-align: left;
+    line-height: 0.5;
+    letter-spacing: -4px;
+}
+
+/* Estilização da parte "highlight" no título da seção "Sobre mim" da página */
+.about-me h2 .about-me-highlight {
+    color: #3786d6;
+}
+
+/* Estilização dos parágrafos na seção "Sobre mim" da página */
+.about-me p {
+    font-size: 24px;
+    flex: 1;
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Estilização da imagem na seção "Sobre mim" da página */
+.about-me img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin-left: 40px;
+    color: #212b47;
+    border: 10px solid #3786d6;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilização da expansão ao passar o mouse sobre a imagem na seção extra "Sobre mim" da página */
+.about-me img:hover {
+    transform: scale(1.3);
+}
+
+/* Estilização do container da seção "Meus interesses" da página */
+.my-interests {
+    background-color: #3786d6;
+    color: #181d2c;
+    padding: 60px;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: right;
+    align-items: center;
+}
+
+/* Estilização do título na seção "Meus interesses" da página */
+.my-interests h2 {
+    color: #181d2c;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 120px;
+    text-align: right;
+    line-height: 0.5;
+    letter-spacing: -4px;
+}
+
+/* Estilização da parte "highlight 1" no título da seção "Meus interesses" da página */
+.my-interests h2 .my-interests-highlight1 {
+    color: #5730e2;
+}
+
+/* Estilização da parte "highlight 2" no título da seção "Meus interesses" da página */
+.my-interests h2 .my-interests-highlight2 {
+    color: #5a1791;
+}
+
+/* Estilização da imagem na seção "Meus interesses" da página */
+.my-interests img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin-top: 40px;
+    margin-right: 60px;
+    color: #212b47;
+    border: 10px solid #212b47;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilização da expansão ao passar o mouse sobre os a imagens na seção extra "Sobre mim" da página */
+.my-interests img:hover {
+    transform: scale(1.3);
+}
+
+/* Estilização da lista e dos parágrafos na seção "Meus interesses" da página */
+.my-interests li {
+    font-size: 24px;
+    text-align: right;
+}
+
+/* Removendo o estilo de lista padrão */
+.interests-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Removendo a margem e posicionando a lista */
+.interests-list li {
+    position: relative;
+    padding-right: 20px;
+    text-align: right;
+}
+
+/* Adicionando o marcador do lado direito dos itens da lista */
+.interests-list li::before {
+    content: '•';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    color: #181d2c;
+    font-size: 26px;
+}
+
+/* Estilização do container da seção extra "Imagens" da página */
+.extra-images {
+    background-color: #3786d6;
+    padding: 20px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Estilização geral das imagens na seção extra "Imagens" da página */
+#image1, #image2, #image3 {
+    width: 100%;
+    height: auto;
+    color: #212b47;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilização da expansão ao passar o mouse sobre os as imagens na seção extra "Imagens" da página */
+#image1:hover, #image2:hover, #image3:hover {
+    transform: scale(1.3);
+}
+
+/* Estilização específica da imagem 1 na seção extra "Imagens" da página */
+#image1 {
+    max-width: 370px;
+    border: 6px solid #2245a5;
+    border-radius: 5px;
+}
+
+/* Estilização específica da imagem 2 na seção extra "Imagens" da página */
+#image2 {
+    max-width: 220px;
+    border: 6px solid #208a37;
+    border-radius: 5px;
+}
+
+/* Estilização específica da imagem 3 na seção extra "Imagens" da página */
+#image3 {
+    max-width: 370px;
+    border: 6px solid #d37811;
+    border-radius: 5px;
+}
+
+/* Estilização do container da seta animada */
+.arrow-container {
+    background-color: #5ea2e6; /* Cor de fundo desejada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+/* Estilização da seta animada */
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 23px solid #181d2c;
+    position: relative;
+    animation: arrowAnimation 0.5s infinite alternate;
+}
+
+/* Animação da seta */
+@keyframes arrowAnimation {
+    from {
+        top: 0;
+    }
+    to {
+        top: 10px;
+    }
+}
+
+/* Estilização do container do botão "Github" */
+.button-container {
+    background-color: #5ea2e6;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    padding-top: 40px;
+}
+
+/* Estilização do botão "Github" */
+.github-button {
+    font-family: "DisposableDroidBB-Bold";
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: #181d2c;
+    border: 4px solid #212b47;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Estilização da cor do ícone SVG dentro do botão "Github" */
+.github-button #github-button-icon path {
+    fill: #1a2238;
+}
+
+/* Estilização específica do ícone SVG dentro do botão "Github" */
+.github-button #github-button-icon {
+    margin-left: 8px;
+}
+
+/* Estilização do botão "Github" ao passar o mouse */
+.github-button:hover {
+    background-color: #212b47;
+    color: #ffffff;
+    border-color: #212b47;
+}
+
+/* Estilização do ícone SVG dentro do botão "Github" ao passar o mouse */
+.github-button:hover #github-button-icon path {
+    fill: #ffffff;
+    transition: fill 0.3s ease-in-out;
+}
+
+/* Estilização do rodapé */
+.footer {
+    background-color: #0e0e0e;
+    color: #c5c5c5;
+}
+
+/* Estilização do texto do rodapé */
+.footer p {
+    padding-bottom: 10px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Estilização do texto predescente aos links pessoais do autor do site no rodapé */
+#my-links {
+    margin-top: -25px;
+}
+
+/* Estilização dos ícones sociais pessoais do autor do site */
+.personal-social-icons {
+    margin-top: 8px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Estilização do preenchimento dos ícones sociais do autor do site */
+.personal-social-icons a svg path {
+    fill: #9e9e9e;
+    transition: fill 0.3s ease-in-out;
+}
+
+/* Estilização geral inicial dos ícones sociais do autor do site */
+.personal-social-icons a svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilização específica do ícone "Facebook" ao passar o mouse */
+#facebook-icon:hover svg path {
+    fill: #3b5998;
+}
+
+/* Estilização específica do ícone "Facebook" ao passar o mouse */
+#instagram-icon:hover svg path {
+    fill: #e1306c;
+}
+
+/* Estilização específica do ícone "LinkedIn" ao passar o mouse */
+#linkedin-icon:hover svg path {
+    fill: #0077b5;
+}
+
+/* Estilização específica do ícone "GitHub" ao passar o mouse */
+#github-icon:hover svg path {
+    fill: #333333;
+}
+
+/* Estilização específica do ícone "Whatsapp" ao passar o mouse */
+#whatsapp-icon:hover svg path {
+    fill: #25d366;
+}
+
+/* Estilização da expansão ao passar o mouse sobre os ícones do autor do site */
+.personal-social-icons a:hover svg {
+    transform: scale(1.2);
+}
+
+/* Estilização do texto no final do site no rodapé */
+#repository-link {
+    color: #7a7a7a;
+    background-color: #030303;
+    font-family: Verdana;
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Estilização do link texto no final do site no rodapé */
+#repository-link a {
+    color: #8848ff;
+}
+
+/* Estilização do link texto no final do site no rodapé ao passar o mouse */
+#repository-link:hover a {
+    color: #69afe9;
+}
