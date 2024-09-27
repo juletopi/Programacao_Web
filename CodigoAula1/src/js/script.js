@@ -1,3 +1,9 @@
+window.addEventListener('scroll', function() {
+    const parallaxContainer = document.querySelector('.parallax-container');
+    let scrollPosition = window.scrollY; 
+    parallaxContainer.style.backgroundPositionY = scrollPosition * 0.5 + 'px'; 
+});
+
 // Span com atualização automática do ano para o rodapé
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
