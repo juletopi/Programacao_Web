@@ -1107,10 +1107,6 @@ document.getElementById('github-button-id').addEventListener('click', function()
 
 <br>
 
-<div align="center">
-  <img width=100% align="center" src="https://capsule-render.vercel.app/api?type=rect&color=32335e&height=4&section=header&%20render">
-</div>
-
 <!-- AUTHOR -->
 
 ## 👤 Autor
