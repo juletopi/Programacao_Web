@@ -26,7 +26,7 @@
 
   • Este é um repositório com os conteúdos de Programação Web, \
   ministradas pelo professor [**Karan Luciano**](https://www.linkedin.com/in/karan-luciano-2b7598159/), utilizando a IDE **VSCode** e as linguagens de \
-  **HTML**, **CSS** e **JavaScript**, além de frameworks e bibliotecas como ferramentas de aprendizado.
+  **HTML**, **CSS** e **JavaScript**, além de **frameworks** e **bibliotecas** como ferramentas de aprendizado.
 </div>
 
 <div align="center">
@@ -103,8 +103,8 @@
 <div align="left">
 
   Nesta aula foram aprendidos:
-  - Criação de uma página-web "Sobre mim"
   - Início da disciplina utilizando a IDE VSCode e as linguagens HTML, CSS e JavaScript
+  - Criação de uma página-web "Sobre mim"
   - Como linkar o JavaScript ao HTML
   - Mensagem de alerta utilizando JavaScript
  
