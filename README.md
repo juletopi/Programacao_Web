@@ -95,6 +95,7 @@
   Nesta aula foram aprendidos:
   - Criação de uma página-web "Sobre mim"
   - Início da disciplina utilizando a IDE VSCode e as linguagens HTML, CSS e JavaScript
+  - Como linkar o JavaScript ao HTML
   - Mensagem de alerta utilizando JavaScript
  
 </div>
