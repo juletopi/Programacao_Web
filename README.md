@@ -94,11 +94,11 @@
 
 <!-- ABOUT TOPIC -->
 
-## 🌐 Programação Web I
+## 🌟 Programação Web I
 
 ### 📋 Ementa:
 
-Esta disciplina introduz o desenvolvimento web, com foco em HTML e CSS básicos, seguido por uma imersão em JavaScript, APIs e o uso de React para a criação de aplicações web dinâmicas. O curso terá uma abordagem prática, com desenvolvimento de projetos que evoluem ao longo das aulas.
+Esta disciplina introduz a primeira parte do desenvolvimento web, com foco em HTML e CSS básicos, seguido por uma imersão em JavaScript, APIs e o uso de React para a criação de aplicações web dinâmicas. O curso terá uma abordagem prática, com desenvolvimento de projetos que evoluem ao longo das aulas.
 
 ### 🎯 Objetivo Geral:
 
