@@ -1123,16 +1123,601 @@ document.getElementById('github-button-id').addEventListener('click', function()
 
 #### HTML:
 ```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Texto e Cor com jQuery | Aula 02 de Programação Web</title>
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/lightMode.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/pseudoElementStyles.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="src/images/ProgramacaoWebAula02Icon.ico" type="image/x-icon" />
+</head>
+<body>
+    <!-- Cabeçalho da página da página -->
+    <header class="header">
+        <img src="src/images/ProgramacaoWebAula02Image.png" alt="ProgramacaoWebAula02Image">
+        <h1 id="titulo">Título Inicial</h1>
+    </header>
+
+    <!-- Container-pai principal que contém as duas seções lado-a-lado -->
+    <div class="main-content">
+        <!-- Seção de informações do projeto -->
+        <aside class="project-info">
+            <h2>Projeto de Manipulação de Texto e Cor com jQuery</h2>
+            <p>Este é um projeto simples de manipulação de texto e cor usando HTML, CSS, JavaScript e jQuery.</p>
+
+            <h3>Funcionalidades</h3>
+            <ul>
+                <li>Trocar o texto do título entre "Título Inicial" e "Título Alterado".</li>
+                <li>Alterar as cores principais da página entre os modos escuro e claro.</li>
+                <li>Modificar o texto do título com um valor inserido pelo usuário no campo de texto.</li>
+            </ul>
+        </aside>
+
+        <!-- Container com o conteúdo principal da página -->
+        <div class="container">
+            <button id="botao-trocar-texto">Trocar Texto</button>
+            <button id="botao-trocar-cor">Trocar Cor de Fundo</button>
+            <input type="text" id="input-novo-texto" placeholder="Novo texto...">
+            <button id="botao-alterar-texto">Alterar Texto do Título</button>
+        </div>
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> Aula 02 de Programação Web ┃ Feito com ♥️ por Juletopi.</p>
+        <p id="my-links">Me encontre aqui:</p>
+        <div class="personal-social-icons">
+            <a id="facebook-icon" href="https://www.facebook.com/profile.php?id=100006955867774" target="_blank" title="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M25,3c-12.15,0 -22,9.85 -22,22c0,11.03 8.125,20.137 18.712,21.728v-15.897h-5.443v-5.783h5.443v-3.848c0,-6.371 3.104,-9.168 8.399,-9.168c2.536,0 3.877,0.188 4.512,0.274v5.048h-3.612c-2.248,0 -3.033,2.131 -3.033,4.533v3.161h6.588l-0.894,5.783h-5.694v15.944c10.738,-1.457 19.022,-10.638 19.022,-21.775c0,-12.15 -9.85,-22 -22,-22z"></path></g></g></svg>
+            </a>
+            <a id="instagram-icon" href="https://www.instagram.com/juletopi/" target="_blank" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M21.58008,7c-8.039,0 -14.58008,6.54494 -14.58008,14.58594v20.83203c0,8.04 6.54494,14.58203 14.58594,14.58203h20.83203c8.04,0 14.58203,-6.54494 14.58203,-14.58594v-20.83398c0,-8.039 -6.54494,-14.58008 -14.58594,-14.58008zM47,15c1.104,0 2,0.896 2,2c0,1.104 -0.896,2 -2,2c-1.104,0 -2,-0.896 -2,-2c0,-1.104 0.896,-2 2,-2zM32,19c7.17,0 13,5.83 13,13c0,7.17 -5.831,13 -13,13c-7.17,0 -13,-5.831 -13,-13c0,-7.169 5.83,-13 13,-13zM32,23c-4.971,0 -9,4.029 -9,9c0,4.971 4.029,9 9,9c4.971,0 9,-4.029 9,-9c0,-4.971 -4.029,-9 -9,-9z"></path></g></g></svg>
+            </a>
+            <a id="linkedin-icon" href="https://www.linkedin.com/in/julio-cezar-pereira-camargo/" target="_blank" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="27" height="27" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM17,20v19h-6v-19zM11,14.47c0,-1.4 1.2,-2.47 3,-2.47c1.8,0 2.93,1.07 3,2.47c0,1.4 -1.12,2.53 -3,2.53c-1.8,0 -3,-1.13 -3,-2.53zM39,39h-6c0,0 0,-9.26 0,-10c0,-2 -1,-4 -3.5,-4.04h-0.08c-2.42,0 -3.42,2.06 -3.42,4.04c0,0.91 0,10 0,10h-6v-19h6v2.56c0,0 1.93,-2.56 5.81,-2.56c3.97,0 7.19,2.73 7.19,8.26z"></path></g></g></svg>
+            </a>
+            <a id="github-icon" href="https://github.com/juletopi" target="_blank" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M32,6c-14.359,0 -26,11.641 -26,26c0,12.277 8.512,22.56 19.955,25.286c-0.592,-0.141 -1.179,-0.299 -1.755,-0.479v-5.957c0,0 -0.975,0.325 -2.275,0.325c-3.637,0 -5.148,-3.245 -5.525,-4.875c-0.229,-0.993 -0.827,-1.934 -1.469,-2.509c-0.767,-0.684 -1.126,-0.686 -1.131,-0.92c-0.01,-0.491 0.658,-0.471 0.975,-0.471c1.625,0 2.857,1.729 3.429,2.623c1.417,2.207 2.938,2.577 3.721,2.577c0.975,0 1.817,-0.146 2.397,-0.426c0.268,-1.888 1.108,-3.57 2.478,-4.774c-6.097,-1.219 -10.4,-4.716 -10.4,-10.4c0,-2.928 1.175,-5.619 3.133,-7.792c-0.2,-0.567 -0.533,-1.714 -0.533,-3.583c0,-1.235 0.086,-2.751 0.65,-4.225c0,0 3.708,0.026 7.205,3.338c1.614,-0.47 3.341,-0.738 5.145,-0.738c1.804,0 3.531,0.268 5.145,0.738c3.497,-3.312 7.205,-3.338 7.205,-3.338c0.567,1.474 0.65,2.99 0.65,4.225c0,2.015 -0.268,3.19 -0.432,3.697c1.898,2.153 3.032,4.802 3.032,7.678c0,5.684 -4.303,9.181 -10.4,10.4c1.628,1.43 2.6,3.513 2.6,5.85v8.557c-0.576,0.181 -1.162,0.338 -1.755,0.479c11.443,-2.726 19.955,-13.009 19.955,-25.286c0,-14.359 -11.641,-26 -26,-26zM33.813,57.93c-0.599,0.042 -1.203,0.07 -1.813,0.07c0.61,0 1.213,-0.029 1.813,-0.07zM37.786,57.346c-1.164,0.265 -2.357,0.451 -3.575,0.554c1.218,-0.103 2.411,-0.29 3.575,-0.554zM32,58c-0.61,0 -1.214,-0.028 -1.813,-0.07c0.6,0.041 1.203,0.07 1.813,0.07zM29.788,57.9c-1.217,-0.103 -2.411,-0.289 -3.574,-0.554c1.164,0.264 2.357,0.451 3.574,0.554z"></path></g></g></svg>
+            </a>
+            <a id="whatsapp-icon" href="http://api.whatsapp.com/send?phone=5569993606894" target="_blank" title="Whatsapp">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M25,2c-12.682,0 -23,10.318 -23,23c0,3.96 1.023,7.854 2.963,11.29l-2.926,10.44c-0.096,0.343 -0.003,0.711 0.245,0.966c0.191,0.197 0.451,0.304 0.718,0.304c0.08,0 0.161,-0.01 0.24,-0.029l10.896,-2.699c3.327,1.786 7.074,2.728 10.864,2.728c12.682,0 23,-10.318 23,-23c0,-12.682 -10.318,-23 -23,-23zM36.57,33.116c-0.492,1.362 -2.852,2.605 -3.986,2.772c-1.018,0.149 -2.306,0.213 -3.72,-0.231c-0.857,-0.27 -1.957,-0.628 -3.366,-1.229c-5.923,-2.526 -9.791,-8.415 -10.087,-8.804c-0.295,-0.389 -2.411,-3.161 -2.411,-6.03c0,-2.869 1.525,-4.28 2.067,-4.864c0.542,-0.584 1.181,-0.73 1.575,-0.73c0.394,0 0.787,0.005 1.132,0.021c0.363,0.018 0.85,-0.137 1.329,1.001c0.492,1.168 1.673,4.037 1.819,4.33c0.148,0.292 0.246,0.633 0.05,1.022c-0.196,0.389 -0.294,0.632 -0.59,0.973c-0.296,0.341 -0.62,0.76 -0.886,1.022c-0.296,0.291 -0.603,0.606 -0.259,1.19c0.344,0.584 1.529,2.493 3.285,4.039c2.255,1.986 4.158,2.602 4.748,2.894c0.59,0.292 0.935,0.243 1.279,-0.146c0.344,-0.39 1.476,-1.703 1.869,-2.286c0.393,-0.583 0.787,-0.487 1.329,-0.292c0.542,0.194 3.445,1.604 4.035,1.896c0.59,0.292 0.984,0.438 1.132,0.681c0.148,0.242 0.148,1.41 -0.344,2.771z"></path></g></g></svg>
+            </a>
+        </div>
+        <p id="repository-link">Esta página-web é de código aberto. Clique <a href="https://github.com/juletopi/Programacao_Web" target="_blank">aqui</a> para acessar o repositório com o código-fonte.</p>
+    </footer>
+
+    <!-- Link do script do JavaScript com as funções -->
+    <script src="src/js/functions.js"></script>
+</body>
+</html>
 ```
 
-#### CSS:
+#### CSS (reset.css):
 ```css
+/* Reset básico para todos os elementos */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Remove a decoração padrão dos links */
+a {
+	text-decoration: none;
+}
+
+/* Adiciona um scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+```
+
+#### CSS (style.css):
+```css
+/* Arquivo o qual fica a estilização CSS da página */
+
+/* Estilização básica do corpo do documento */
+body {
+    font-family: Verdana;
+    color: #dbc0ff;
+    background-color: #191625;
+}
+
+/* Estilização do cabeçalho da página */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilização da imagem no cabeçalho da página */
+.header img {
+    width: 100%;
+    height: auto;
+    max-width: 190px;
+    margin-top: 80px;
+}
+
+/* Estilização do título no cabeçalho da página */
+.header h1 {
+    font-size: 45px;
+    color: #dbc0ff;
+    margin: 20px 0;
+    margin-bottom: -20px;
+    text-align: center;
+    letter-spacing: -3px;
+}
+
+/* Estilização do contêiner-pai principal da página */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+/* Estilização da seção de informações do projeto da página */
+.project-info {
+    flex: 2;
+    background-color: #2a2d4d;
+    color: #dbc0ff;
+    padding: 30px;
+    padding-right: 80px;
+    margin: 40px auto;
+    margin-right: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Estilização dos títulos na seção de informações do projeto da página */
+.project-info h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+/* Estilização do subtítulo na seção de informações do projeto da página */
+.project-info h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilização da lista na seção de informações do projeto da página */
+.project-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Estilização do container principal da página */
+.container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border: 5px solid #dbc0ff;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/* Estilização dos botões */
+.container button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: #214772;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Estilização específica do botão 'botao-trocar-texto' da página */
+#botao-trocar-texto {
+    padding: 12px 62px;
+}
+
+/* Estilização específica do botão 'botao-trocar-cor' da página */
+#botao-trocar-cor {
+    padding: 12px 30px;
+}
+
+/* Estilização específica do botão 'botao-alterar-texto' da página */
+#botao-alterar-texto {
+    border: 3px solid #214772;
+    color: #dbc0ff;
+    border-radius: 5px;
+    padding: 10px 22px;
+    background-color: transparent;
+}
+
+/* Estilização específica dos botões 'botao-trocar-texto' e 'botao-trocar-cor' da página ao passar o mouse por cima */
+#botao-trocar-texto:hover,
+#botao-trocar-cor:hover {
+    background-color: #dbc0ff;
+    color: #0e0e0e;
+}
+
+/* Estilização específica do botão 'botao-alterar-texto' da página ao passar o mouse por cima */
+#botao-alterar-texto:hover {
+    background-color: #214772;
+    border: 3px solid #214772;
+    border-radius: 5px;
+}
+
+/* Estilização do input */
+.container input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    border: 3px solid #dbc0ff;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #00000000;
+}
+
+/* Estilização do rodapé */
+.footer {
+    background-color: #0e0e0e;
+    color: #c5c5c5;
+}
+
+/* Estilização do texto do rodapé */
+.footer p {
+    padding-bottom: 10px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Estilização do texto predescente aos links pessoais do autor do site no rodapé */
+#my-links {
+    margin-top: -25px;
+}
+
+/* Estilização dos ícones sociais pessoais do autor do site */
+.personal-social-icons {
+    margin-top: 8px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Estilização do preenchimento dos ícones sociais do autor do site */
+.personal-social-icons a svg path {
+    fill: #9e9e9e;
+    transition: fill 0.3s ease-in-out;
+}
+
+/* Estilização geral inicial dos ícones sociais do autor do site */
+.personal-social-icons a svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilização específica do ícone "Facebook" ao passar o mouse */
+#facebook-icon:hover svg path {
+    fill: #3b5998;
+}
+
+/* Estilização específica do ícone "Instagram" ao passar o mouse */
+#instagram-icon:hover svg path {
+    fill: #e1306c;
+}
+
+/* Estilização específica do ícone "LinkedIn" ao passar o mouse */
+#linkedin-icon:hover svg path {
+    fill: #0077b5;
+}
+
+/* Estilização específica do ícone "GitHub" ao passar o mouse */
+#github-icon:hover svg path {
+    fill: #333333;
+}
+
+/* Estilização específica do ícone "Whatsapp" ao passar o mouse */
+#whatsapp-icon:hover svg path {
+    fill: #25d366;
+}
+
+/* Estilização da expansão ao passar o mouse sobre os ícones do autor do site */
+.personal-social-icons a:hover svg {
+    transform: scale(1.2);
+}
+
+/* Estilização do texto no final do site no rodapé */
+#repository-link {
+    color: #7a7a7a;
+    background-color: #030303;
+    font-family: Verdana;
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Estilização do link texto no final do site no rodapé */
+#repository-link a {
+    color: #8848ff;
+}
+
+/* Estilização do link texto no final do site no rodapé ao passar o mouse */
+#repository-link:hover a {
+    color: #69afe9;
+}
+```
+
+#### CSS (lightMode.css):
+```css
+/* Arquivo o qual fica o modo 'Light Mode' da página */
+
+.light-mode {
+    background-color: #e2e3f0;
+    color: #080e16;
+}
+
+.light-mode .header h1 {
+    color: #080e16;
+}
+
+.light-mode .project-info {
+    background-color: #a5aeff;
+    color: #214772;
+}
+
+.light-mode .container {
+    border: 5px solid #080e16;
+}
+
+.light-mode .container button {
+    background-color: #214772;
+    color: #e2e3f0;
+}
+
+.light-mode #botao-alterar-texto {
+    color: #080e16;
+}
+
+.light-mode .container input {
+    border: 3px solid #080e16;
+    color: #080e16;
+}
+
+.light-mode #botao-trocar-texto:hover,
+.light-mode #botao-trocar-cor:hover {
+    background-color: #a5aeff;
+    color: #214772;
+}
+
+.light-mode #botao-alterar-texto:hover {
+    background-color: #214772;
+    border: 3px solid #214772;
+    color: #e2e3f0;
+    border-radius: 5px;
+}
+
+.light-mode::-webkit-scrollbar {
+    background-color: #c5c5c5;
+    width: 10px;
+	height: 8px;
+}
+
+.light-mode::-webkit-scrollbar-thumb {
+    background-color: #214772;
+    border-radius: 8px;
+}
+
+.light-mode::selection {
+    background-color: #193556b0;
+    color: #c0c6ff;
+}
+
+```
+
+#### CSS (pseudoElementsStyles.css):
+```css
+/* Estilização da barra de rolagem */
+::-webkit-scrollbar {
+    background-color: #13111d;
+    width: 10px;
+	height: 8px;
+}
+
+/* Estilização do indicador da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #193556;
+    border-radius: 8px;
+}
+
+/* Estilização da seleção de texto */
+::selection {
+    background-color: #dee1fab6;
+    color: #193556;
+}
+```
+
+#### CSS (responsive.css):
+```css
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .header img {
+        max-width: 160px;
+    }
+
+    .header h1 {
+        font-size: 38px;
+    }
+
+    .project-info {
+        padding-right: 40px;
+    }
+
+    .project-info h2 {
+        font-size: 22px;
+    }
+    
+    .project-info h3 {
+        font-size: 19px;
+    }
+
+    .footer p {
+        font-size: 13px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -8px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 26px;
+    }
+
+    #repository-link {
+        margin-top: -20px;
+        font-size: 9px;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 767px) {
+    .header img {
+        max-width: 140px;
+    }
+
+    .header h1 {
+        font-size: 35px;
+        margin-bottom: -50px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-info {
+        order: 2;
+        width: 90%;
+        margin: 20px 0;
+        padding-right: 40px;
+    }
+
+    .project-info h2 {
+        font-size: 19px;
+    }
+    
+    .project-info h3 {
+        font-size: 17px;
+    }
+
+    .container {
+        order: 1;
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    .footer p {
+        font-size: 11px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -8px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 22px;
+    }
+
+    #repository-link {
+        margin-top: -20px;
+        font-size: 9px;
+    }
+}
+```
+
+#### JavaScript:
+```js
+// Arquivo o qual fica o JavaScript da página
+
+/*
+let textoOriginal = document.getElementById('titulo').textContent;
+
+document.getElementById('botao-trocar-texto').addEventListener('click' , function() {
+    document.getElementById('titulo').textContent = 'Texto trocado'
+
+    let titulo = document.getElementById('titulo');
+
+    if (titulo.textContent === 'Texto trocado'){
+        titulo.textContent = textoOriginal;
+    } else {
+        textoOriginal = titulo.textContent;
+        titulo.textContent = 'Texto trocado'
+    }
+});
+*/
+
+// Span com atualização automática do ano para o rodapé
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Função para mudar o título principal da página
+$(document).ready(function(){
+    $('#botao-trocar-texto').on('click', function(){
+        let titulo = document.getElementById('titulo'); // <-- Obtém o elemento do título pelo ID 'titulo'
+
+        if (titulo.textContent === 'Texto trocado'){
+            titulo.textContent = textoOriginal;
+        } else {
+            textoOriginal = titulo.textContent;
+            titulo.textContent = 'Texto trocado';
+        }
+    })
+
+    let corAtual = true; // <-- Variável para armazenar o estado atual da cor
+
+    // Função para mudar a cor do fundo da página
+    $('#botao-trocar-cor').on('click', function() {
+        if (corAtual) {
+            $('body').addClass('light-mode'); // <-- Adiciona a classe de light mode
+        } else {
+            $('body').removeClass('light-mode'); // <-- Remove a classe de light mode
+        }
+        corAtual = !corAtual; // <-- Alterna o valor da variável
+    })
+
+    // Função para mudar o título principal da página via input
+    $('#botao-alterar-texto').on('click', function() {
+        let novoTexto = $('#input-novo-texto').val(); // <-- Pega o valor do campo de input
+
+        if (novoTexto) {
+            $('#titulo').text(novoTexto);
+        } else {
+            alert('Por favor, insira um texto válido!'); // <-- Alerta se o campo estiver vazio
+        }
+    })
+});
 ```
 
 ### 🖼️ Imagem da página
 
-> <a href="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-DarkMode_Aula02-pic.jpeg"><img align="center" src="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-DarkMode_Aula02-pic.jpeg" alt="WebPageViewDarkMode-pic" title="Visualização da Página Inteira (Modo Escuro)" style="width: 50%;"></a>
-> <a href="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-LightMode_Aula02-pic.jpeg"><img align="center" src="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-LightMode_Aula02-pic.jpeg" alt="WebPageViewLightMode-pic" title="Visualização da Página Inteira (Modo Claro)" style="width: 50%;"></a>
+> <a href="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-DarkMode_Aula02-pic.jpeg"><img align="center" src="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-DarkMode_Aula02-pic.jpeg" alt="WebPageViewDarkMode-pic" title="Visualização da Página Inteira (Modo Escuro)" style="width: 45%;"></a>
+> <a href="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-LightMode_Aula02-pic.jpeg"><img align="center" src="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-LightMode_Aula02-pic.jpeg" alt="WebPageViewLightMode-pic" title="Visualização da Página Inteira (Modo Claro)" style="width: 45%;"></a>
 
 <div align="left">
   <h6><a href="#programação-web-"> Voltar para o início ↺</a></h6>
