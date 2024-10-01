@@ -92,6 +92,45 @@
   <img width=100% align="center" src="https://capsule-render.vercel.app/api?type=rect&color=32335e&height=4&section=header&%20render">
 </div>
 
+<!-- ABOUT TOPIC -->
+
+## 🌐 Programação Web I
+
+### 📋 Ementa:
+
+Esta disciplina introduz o desenvolvimento web, com foco em HTML e CSS básicos, seguido por uma imersão em JavaScript, APIs e o uso de React para a criação de aplicações web dinâmicas. O curso terá uma abordagem prática, com desenvolvimento de projetos que evoluem ao longo das aulas.
+
+### 🎯 Objetivo Geral:
+
+- Desenvolver sites estáticos e aplicativos web dinâmicos, utilizando JavaScript e React, com foco em funcionalidades modernas e consumo de APIs.
+
+### 🎯 Objetivos Específicos:
+
+- 📝 Especificar documentos utilizando HTML;  
+- 🎨 Estilizar documentos utilizando regras de CSS;  
+- 🖥️ Implementar interatividade com JavaScript;  
+- 🔗 Consumir APIs utilizando JavaScript;  
+- 🚀 Desenvolver interfaces dinâmicas com React.  
+
+### 📚 Conteúdos Principais:
+
+- Desenvolvimento web  
+- Aplicações cliente/servidor  
+- HTML e CSS básicos  
+- JavaScript para interatividade  
+- APIs e integração com back-end  
+- React (biblioteca front-end)
+
+<div align="left">
+  <h6><a href="#programação-web-"> Voltar para o início ↺</a></h6>
+</div>
+
+<br>
+
+<div align="center">
+  <img width=100% align="center" src="https://capsule-render.vercel.app/api?type=rect&color=32335e&height=4&section=header&%20render">
+</div>
+
 <!-- LEARNED CONCEPTS -->
 
 ## 📚 Conceitos Aprendidos:
