@@ -1100,6 +1100,44 @@ document.getElementById('github-button-id').addEventListener('click', function()
   <h6><a href="#programação-web-"> Voltar para o início ↺</a></h6>
 </div>
 
+<div align="center">
+  <img width=100% align="center" src="https://capsule-render.vercel.app/api?type=rect&color=32335e&height=4&section=header&%20render">
+</div>
+
+### 2. Manipulação de Texto e Cor com jQuery
+
+> [!NOTE]\
+> *Retirado da aula de "[CodigoAula01](https://github.com/juletopi/Programacao_Web/tree/main/CodigoAula2)"*\
+> *Link do repositório do projeto original: [static-website by Prof-Karan-Luciano](https://github.com/Desenvolvimento-WEB-I-2024-2/static-website)*
+
+<div align="left">
+
+  Nesta aula foram aprendidos:
+  - Utilização do jQuery para interações com o DOM e manipulação de eventos.
+  - Criação de uma página-web com as seguintes funcionalidades:
+    - Trocar o texto do título entre "Título Inicial" e "Título Alterado".
+    - Alterar as cores principais da página entre os modos escuro e claro.
+    - Modificar o texto do título com um valor inserido pelo usuário no campo de texto.
+ 
+</div>
+
+#### HTML:
+```html
+```
+
+#### CSS:
+```css
+```
+
+### 🖼️ Imagem da página
+
+> <a href="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-DarkMode_Aula02-pic.jpeg"><img align="center" src="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-DarkMode_Aula02-pic.jpeg" alt="WebPageViewDarkMode-pic" title="Visualização da Página Inteira (Modo Escuro)" style="width: 50%;"></a>
+> <a href="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-LightMode_Aula02-pic.jpeg"><img align="center" src="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-LightMode_Aula02-pic.jpeg" alt="WebPageViewLightMode-pic" title="Visualização da Página Inteira (Modo Claro)" style="width: 50%;"></a>
+
+<div align="left">
+  <h6><a href="#programação-web-"> Voltar para o início ↺</a></h6>
+</div>
+
 <br>
 
 <!-- AUTHOR -->
