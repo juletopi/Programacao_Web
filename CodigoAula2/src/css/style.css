@@ -1,0 +1,237 @@
+/* Arquivo o qual fica a estilização CSS da página */
+
+/* Estilização básica do corpo do documento */
+body {
+    font-family: Verdana;
+    color: #dbc0ff;
+    background-color: #191625;
+}
+
+/* Estilização do cabeçalho da página */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilização da imagem no cabeçalho da página */
+.header img {
+    width: 100%;
+    height: auto;
+    max-width: 190px;
+    margin-top: 80px;
+}
+
+/* Estilização do título no cabeçalho da página */
+.header h1 {
+    font-size: 45px;
+    color: #dbc0ff;
+    margin: 20px 0;
+    margin-bottom: -20px;
+    text-align: center;
+    letter-spacing: -3px;
+}
+
+/* Estilização do contêiner-pai principal da página */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+/* Estilização da seção de informações do projeto da página */
+.project-info {
+    flex: 2;
+    background-color: #2a2d4d;
+    color: #dbc0ff;
+    padding: 30px;
+    padding-right: 80px;
+    margin: 40px auto;
+    margin-right: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Estilização dos títulos na seção de informações do projeto da página */
+.project-info h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+/* Estilização do subtítulo na seção de informações do projeto da página */
+.project-info h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilização da lista na seção de informações do projeto da página */
+.project-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Estilização do container principal da página */
+.container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border: 5px solid #dbc0ff;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/* Estilização dos botões */
+.container button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: #214772;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Estilização específica do botão 'botao-trocar-texto' da página */
+#botao-trocar-texto {
+    padding: 12px 62px;
+}
+
+/* Estilização específica do botão 'botao-trocar-cor' da página */
+#botao-trocar-cor {
+    padding: 12px 30px;
+}
+
+/* Estilização específica do botão 'botao-alterar-texto' da página */
+#botao-alterar-texto {
+    border: 3px solid #214772;
+    color: #dbc0ff;
+    border-radius: 5px;
+    padding: 10px 22px;
+    background-color: transparent;
+}
+
+/* Estilização específica dos botões 'botao-trocar-texto' e 'botao-trocar-cor' da página ao passar o mouse por cima */
+#botao-trocar-texto:hover,
+#botao-trocar-cor:hover {
+    background-color: #dbc0ff;
+    color: #0e0e0e;
+}
+
+/* Estilização específica do botão 'botao-alterar-texto' da página ao passar o mouse por cima */
+#botao-alterar-texto:hover {
+    background-color: #214772;
+    border: 3px solid #214772;
+    border-radius: 5px;
+}
+
+/* Estilização do input */
+.container input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    border: 3px solid #dbc0ff;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #00000000;
+}
+
+/* Estilização do rodapé */
+.footer {
+    background-color: #0e0e0e;
+    color: #c5c5c5;
+}
+
+/* Estilização do texto do rodapé */
+.footer p {
+    padding-bottom: 10px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Estilização do texto predescente aos links pessoais do autor do site no rodapé */
+#my-links {
+    margin-top: -25px;
+}
+
+/* Estilização dos ícones sociais pessoais do autor do site */
+.personal-social-icons {
+    margin-top: 8px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Estilização do preenchimento dos ícones sociais do autor do site */
+.personal-social-icons a svg path {
+    fill: #9e9e9e;
+    transition: fill 0.3s ease-in-out;
+}
+
+/* Estilização geral inicial dos ícones sociais do autor do site */
+.personal-social-icons a svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilização específica do ícone "Facebook" ao passar o mouse */
+#facebook-icon:hover svg path {
+    fill: #3b5998;
+}
+
+/* Estilização específica do ícone "Instagram" ao passar o mouse */
+#instagram-icon:hover svg path {
+    fill: #e1306c;
+}
+
+/* Estilização específica do ícone "LinkedIn" ao passar o mouse */
+#linkedin-icon:hover svg path {
+    fill: #0077b5;
+}
+
+/* Estilização específica do ícone "GitHub" ao passar o mouse */
+#github-icon:hover svg path {
+    fill: #333333;
+}
+
+/* Estilização específica do ícone "Whatsapp" ao passar o mouse */
+#whatsapp-icon:hover svg path {
+    fill: #25d366;
+}
+
+/* Estilização da expansão ao passar o mouse sobre os ícones do autor do site */
+.personal-social-icons a:hover svg {
+    transform: scale(1.2);
+}
+
+/* Estilização do texto no final do site no rodapé */
+#repository-link {
+    color: #7a7a7a;
+    background-color: #030303;
+    font-family: Verdana;
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Estilização do link texto no final do site no rodapé */
+#repository-link a {
+    color: #8848ff;
+}
+
+/* Estilização do link texto no final do site no rodapé ao passar o mouse */
+#repository-link:hover a {
+    color: #69afe9;
+}

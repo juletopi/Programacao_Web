@@ -1,0 +1,100 @@
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .header img {
+        max-width: 160px;
+    }
+
+    .header h1 {
+        font-size: 38px;
+    }
+
+    .project-info {
+        padding-right: 40px;
+    }
+
+    .project-info h2 {
+        font-size: 22px;
+    }
+    
+    .project-info h3 {
+        font-size: 19px;
+    }
+
+    .footer p {
+        font-size: 13px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -8px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 26px;
+    }
+
+    #repository-link {
+        margin-top: -20px;
+        font-size: 9px;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 767px) {
+    .header img {
+        max-width: 140px;
+    }
+
+    .header h1 {
+        font-size: 35px;
+        margin-bottom: -50px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-info {
+        order: 2;
+        width: 90%;
+        margin: 20px 0;
+        padding-right: 40px;
+    }
+
+    .project-info h2 {
+        font-size: 19px;
+    }
+    
+    .project-info h3 {
+        font-size: 17px;
+    }
+
+    .container {
+        order: 1;
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    .footer p {
+        font-size: 11px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -8px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 22px;
+    }
+
+    #repository-link {
+        margin-top: -20px;
+        font-size: 9px;
+    }
+}

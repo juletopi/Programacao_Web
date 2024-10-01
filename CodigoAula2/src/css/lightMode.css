@@ -1,0 +1,62 @@
+/* Arquivo o qual fica o modo 'Light Mode' da página */
+
+.light-mode {
+    background-color: #e2e3f0;
+    color: #080e16;
+}
+
+.light-mode .header h1 {
+    color: #080e16;
+}
+
+.light-mode .project-info {
+    background-color: #a5aeff;
+    color: #214772;
+}
+
+.light-mode .container {
+    border: 5px solid #080e16;
+}
+
+.light-mode .container button {
+    background-color: #214772;
+    color: #e2e3f0;
+}
+
+.light-mode #botao-alterar-texto {
+    color: #080e16;
+}
+
+.light-mode .container input {
+    border: 3px solid #080e16;
+    color: #080e16;
+}
+
+.light-mode #botao-trocar-texto:hover,
+.light-mode #botao-trocar-cor:hover {
+    background-color: #a5aeff;
+    color: #214772;
+}
+
+.light-mode #botao-alterar-texto:hover {
+    background-color: #214772;
+    border: 3px solid #214772;
+    color: #e2e3f0;
+    border-radius: 5px;
+}
+
+.light-mode::-webkit-scrollbar {
+    background-color: #c5c5c5;
+    width: 10px;
+	height: 8px;
+}
+
+.light-mode::-webkit-scrollbar-thumb {
+    background-color: #214772;
+    border-radius: 8px;
+}
+
+.light-mode::selection {
+    background-color: #193556b0;
+    color: #c0c6ff;
+}
