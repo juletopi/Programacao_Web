@@ -123,6 +123,12 @@ Esta disciplina introduz a primeira parte do desenvolvimento web, com foco em HT
 - APIs e integração com back-end  
 - React (biblioteca front-end)
 
+### 🔗 Links:
+- Link da "organização" oficial da disciplina:
+  - [github.com/Desenvolvimento-WEB-I-2024-2](https://github.com/Desenvolvimento-WEB-I-2024-2)
+- Link do repositório com as informações da disciplina:
+  - [github.com/Desenvolvimento-WEB-I-2024-2/WEB-I](https://github.com/Desenvolvimento-WEB-I-2024-2/WEB-I)
+
 <div align="left">
   <h6><a href="#programação-web-"> Voltar para o início ↺</a></h6>
 </div>
