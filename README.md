@@ -1161,7 +1161,7 @@ document.getElementById('github-button-id').addEventListener('click', function()
 <div align="left">
 
   Nesta aula foram aprendidos:
-  - Utilização do jQuery para interações com o DOM e manipulação de eventos.
+  - Utilização da biblioteca do jQuery para interações com o DOM e manipulação de eventos.
   - Criação de uma página-web com as seguintes funcionalidades:
     - Trocar o texto do título entre "Título Inicial" e "Título Alterado".
     - Alterar as cores principais da página entre os modos escuro e claro.
