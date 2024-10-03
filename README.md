@@ -1161,7 +1161,7 @@ document.getElementById('github-button-id').addEventListener('click', function()
 ### 2. Manipulação de Texto e Cor com jQuery
 
 > [!NOTE]\
-> *Retirado da aula de "[CodigoAula01](https://github.com/juletopi/Programacao_Web/tree/main/CodigoAula2)"*\
+> *Retirado da aula de "[CodigoAula02](https://github.com/juletopi/Programacao_Web/tree/main/CodigoAula2)"*\
 > *Link do repositório do projeto original: [static-website by Prof-Karan-Luciano](https://github.com/Desenvolvimento-WEB-I-2024-2/static-website)*
 
 <div align="left">
