@@ -64,6 +64,7 @@
     <a href="#1-web-página-sobre-mim">Conceitos Aprendidos 1</a>
   </p>
     <a href="#2-manipulação-de-texto-e-cor-com-jquery">Conceitos Aprendidos 2</a> &#xa0; | &#xa0;
+    <a href="#3-criação-e-validação-de-formulário-de-cadastro">Conceitos Aprendidos 3</a> &#xa0; | &#xa0;
     <a href="#-autor">Autor</a>
   </p>
 </div>
