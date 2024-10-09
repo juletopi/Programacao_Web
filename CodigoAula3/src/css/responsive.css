@@ -1,0 +1,61 @@
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    img {
+        max-width: 140px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+
+    .footer p {
+        font-size: 13px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -25px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 26px;
+    }
+
+    #repository-link {
+        margin-top: -10px;
+        font-size: 9px;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 767px) {
+    img {
+        max-width: 120px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+
+    .footer p {
+        font-size: 11px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -25px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 22px;
+    }
+
+    #repository-link {
+        margin-top: -15px;
+        font-size: 9px;
+    }
+}
