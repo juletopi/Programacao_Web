@@ -56,6 +56,12 @@
     </a>
 </div>
 
+<div align="center">
+    <a href="https://www.w3schools.com/react/">
+        <img src="https://img.shields.io/badge/Made%20with%20framework:-React%20-gray.svg?colorA=343d4b&amp;colorB=58a0a4&amp;style=for-the-badge" alt="ReactFramework-badge" style="max-width: 100%;">
+    </a>
+</div>
+
 <!-- SUMMARY -->
 
 <h2 align="center">Sumário 🧾</h2>
