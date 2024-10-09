@@ -1577,7 +1577,6 @@ body {
     background-color: #193556b0;
     color: #c0c6ff;
 }
-
 ```
 
 #### CSS (pseudoElementsStyles.css):
@@ -1772,6 +1771,523 @@ $(document).ready(function(){
 
 > <a href="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-DarkMode_Aula02-pic.jpeg"><img align="center" src="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-DarkMode_Aula02-pic.jpeg" alt="WebPageViewDarkMode-pic" title="Visualização da Página Inteira (Modo Escuro)" style="width: 45%;"></a>
 > <a href="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-LightMode_Aula02-pic.jpeg"><img align="center" src="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-LightMode_Aula02-pic.jpeg" alt="WebPageViewLightMode-pic" title="Visualização da Página Inteira (Modo Claro)" style="width: 45%;"></a>
+
+<div align="left">
+  <h6><a href="#programação-web-"> Voltar para o início ↺</a></h6>
+</div>
+
+<div align="center">
+  <img width=100% align="center" src="https://capsule-render.vercel.app/api?type=rect&color=32335e&height=4&section=header&%20render">
+</div>
+
+### 3. Criação e Validação de Formulário de Cadastro
+
+> [!NOTE]\
+> *Retirado da aula de "[CodigoAula03](https://github.com/juletopi/Programacao_Web/tree/main/CodigoAula3)"*\
+> *Link do repositório do projeto original: [static-website by Prof-Karan-Luciano](https://github.com/Desenvolvimento-WEB-I-2024-2/static-website)*
+
+<div align="left">
+
+  Nesta aula foram aprendidos:
+  - Utilização da biblioteca do Bootstrap para criação de estruturas de CSS pré-prontas.
+  - Utilização de JavaScript com jQuery para validar diferentes informações de cadastro. 
+  - Criação e validação de um formulário de cadastro de usuário com os seguintes campos:
+    - Nome completo;
+    - Email;
+    - Senha e confirmação de senha;
+    - Número de telefone;
+    - CPF.
+ 
+</div>
+
+#### HTML:
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Validação | Aula 03 de Programação Web</title>
+    <!-- Link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/pseudoElementsStyles.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    <link rel="shortcut icon" href="src/images/FormularioCadastroIcon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div class="container mt-5">
+    <img src="src/images/FormularioCadastroImage.png" alt="ProgramacaoWebAula03Image">
+    <h2>Formulário de Cadastro</h2>
+    <form id="meuFormulario" novalidate>
+        <!-- Nome -->
+        <div class="form-group">
+            <label for="nome">Nome Completo <span id="asterisco">*</span></label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            <div class="invalid-feedback">
+                Por favor, insira um nome válido (apenas letras).
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email <span id="asterisco">*</span></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@dominio.com" required>
+            <div class="invalid-feedback">
+                Por favor, insira um email válido.
+            </div>
+        </div>
+
+        <!-- Senha -->
+        <div class="form-group">
+            <label for="senha">Senha <span id="asterisco">*</span></label>
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="Mínimo 8 caracteres, incluindo números e letras" required>
+            <div class="invalid-feedback">
+                A senha deve ter no mínimo 8 caracteres, incluindo números e letras.
+            </div>
+        </div>
+
+        <!-- Confirmação de Senha -->
+        <div class="form-group">
+            <label for="confirmarSenha">Confirmar Senha <span id="asterisco">*</span></label>
+            <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" required>
+            <div class="invalid-feedback">
+                As senhas não correspondem.
+            </div>
+        </div>
+
+        <!-- Telefone -->
+        <div class="form-group">
+            <label for="telefone">Telefone <span id="asterisco">*</span></label>
+            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+            <div class="invalid-feedback">
+                Por favor, insira um telefone válido no formato (XX) XXXXX-XXXX.
+            </div>
+        </div>
+
+        <!-- CPF -->
+        <div class="form-group">
+            <label for="cpf">CPF <span id="asterisco">*</span></label>
+            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="XXX.XXX.XXX-XX" required>
+            <div class="invalid-feedback">
+                Por favor, insira um CPF válido.
+            </div>
+        </div>
+
+        <!-- Botão de Submissão -->
+        <button id="btn-submit" type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>
+
+<footer class="footer">
+    <p>&copy; <span id="current-year"></span> Aula 03 de Programação Web ┃ Feito com ♥️ por Juletopi.</p>
+    <p id="my-links">Me encontre aqui:</p>
+    <div class="personal-social-icons">
+        <a id="facebook-icon" href="https://www.facebook.com/profile.php?id=100006955867774" target="_blank" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M25,3c-12.15,0 -22,9.85 -22,22c0,11.03 8.125,20.137 18.712,21.728v-15.897h-5.443v-5.783h5.443v-3.848c0,-6.371 3.104,-9.168 8.399,-9.168c2.536,0 3.877,0.188 4.512,0.274v5.048h-3.612c-2.248,0 -3.033,2.131 -3.033,4.533v3.161h6.588l-0.894,5.783h-5.694v15.944c10.738,-1.457 19.022,-10.638 19.022,-21.775c0,-12.15 -9.85,-22 -22,-22z"></path></g></g></svg>
+        </a>
+        <a id="instagram-icon" href="https://www.instagram.com/juletopi/" target="_blank" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M21.58008,7c-8.039,0 -14.58008,6.54494 -14.58008,14.58594v20.83203c0,8.04 6.54494,14.58203 14.58594,14.58203h20.83203c8.04,0 14.58203,-6.54494 14.58203,-14.58594v-20.83398c0,-8.039 -6.54494,-14.58008 -14.58594,-14.58008zM47,15c1.104,0 2,0.896 2,2c0,1.104 -0.896,2 -2,2c-1.104,0 -2,-0.896 -2,-2c0,-1.104 0.896,-2 2,-2zM32,19c7.17,0 13,5.83 13,13c0,7.17 -5.831,13 -13,13c-7.17,0 -13,-5.831 -13,-13c0,-7.169 5.83,-13 13,-13zM32,23c-4.971,0 -9,4.029 -9,9c0,4.971 4.029,9 9,9c4.971,0 9,-4.029 9,-9c0,-4.971 -4.029,-9 -9,-9z"></path></g></g></svg>
+        </a>
+        <a id="linkedin-icon" href="https://www.linkedin.com/in/julio-cezar-pereira-camargo/" target="_blank" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="27" height="27" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM17,20v19h-6v-19zM11,14.47c0,-1.4 1.2,-2.47 3,-2.47c1.8,0 2.93,1.07 3,2.47c0,1.4 -1.12,2.53 -3,2.53c-1.8,0 -3,-1.13 -3,-2.53zM39,39h-6c0,0 0,-9.26 0,-10c0,-2 -1,-4 -3.5,-4.04h-0.08c-2.42,0 -3.42,2.06 -3.42,4.04c0,0.91 0,10 0,10h-6v-19h6v2.56c0,0 1.93,-2.56 5.81,-2.56c3.97,0 7.19,2.73 7.19,8.26z"></path></g></g></svg>
+        </a>
+        <a id="github-icon" href="https://github.com/juletopi" target="_blank" title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M32,6c-14.359,0 -26,11.641 -26,26c0,12.277 8.512,22.56 19.955,25.286c-0.592,-0.141 -1.179,-0.299 -1.755,-0.479v-5.957c0,0 -0.975,0.325 -2.275,0.325c-3.637,0 -5.148,-3.245 -5.525,-4.875c-0.229,-0.993 -0.827,-1.934 -1.469,-2.509c-0.767,-0.684 -1.126,-0.686 -1.131,-0.92c-0.01,-0.491 0.658,-0.471 0.975,-0.471c1.625,0 2.857,1.729 3.429,2.623c1.417,2.207 2.938,2.577 3.721,2.577c0.975,0 1.817,-0.146 2.397,-0.426c0.268,-1.888 1.108,-3.57 2.478,-4.774c-6.097,-1.219 -10.4,-4.716 -10.4,-10.4c0,-2.928 1.175,-5.619 3.133,-7.792c-0.2,-0.567 -0.533,-1.714 -0.533,-3.583c0,-1.235 0.086,-2.751 0.65,-4.225c0,0 3.708,0.026 7.205,3.338c1.614,-0.47 3.341,-0.738 5.145,-0.738c1.804,0 3.531,0.268 5.145,0.738c3.497,-3.312 7.205,-3.338 7.205,-3.338c0.567,1.474 0.65,2.99 0.65,4.225c0,2.015 -0.268,3.19 -0.432,3.697c1.898,2.153 3.032,4.802 3.032,7.678c0,5.684 -4.303,9.181 -10.4,10.4c1.628,1.43 2.6,3.513 2.6,5.85v8.557c-0.576,0.181 -1.162,0.338 -1.755,0.479c11.443,-2.726 19.955,-13.009 19.955,-25.286c0,-14.359 -11.641,-26 -26,-26zM33.813,57.93c-0.599,0.042 -1.203,0.07 -1.813,0.07c0.61,0 1.213,-0.029 1.813,-0.07zM37.786,57.346c-1.164,0.265 -2.357,0.451 -3.575,0.554c1.218,-0.103 2.411,-0.29 3.575,-0.554zM32,58c-0.61,0 -1.214,-0.028 -1.813,-0.07c0.6,0.041 1.203,0.07 1.813,0.07zM29.788,57.9c-1.217,-0.103 -2.411,-0.289 -3.574,-0.554c1.164,0.264 2.357,0.451 3.574,0.554z"></path></g></g></svg>
+        </a>
+        <a id="whatsapp-icon" href="http://api.whatsapp.com/send?phone=5569993606894" target="_blank" title="Whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0,0,256,256"style="fill:#000000;"><g fill="#a59cc2" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M25,2c-12.682,0 -23,10.318 -23,23c0,3.96 1.023,7.854 2.963,11.29l-2.926,10.44c-0.096,0.343 -0.003,0.711 0.245,0.966c0.191,0.197 0.451,0.304 0.718,0.304c0.08,0 0.161,-0.01 0.24,-0.029l10.896,-2.699c3.327,1.786 7.074,2.728 10.864,2.728c12.682,0 23,-10.318 23,-23c0,-12.682 -10.318,-23 -23,-23zM36.57,33.116c-0.492,1.362 -2.852,2.605 -3.986,2.772c-1.018,0.149 -2.306,0.213 -3.72,-0.231c-0.857,-0.27 -1.957,-0.628 -3.366,-1.229c-5.923,-2.526 -9.791,-8.415 -10.087,-8.804c-0.295,-0.389 -2.411,-3.161 -2.411,-6.03c0,-2.869 1.525,-4.28 2.067,-4.864c0.542,-0.584 1.181,-0.73 1.575,-0.73c0.394,0 0.787,0.005 1.132,0.021c0.363,0.018 0.85,-0.137 1.329,1.001c0.492,1.168 1.673,4.037 1.819,4.33c0.148,0.292 0.246,0.633 0.05,1.022c-0.196,0.389 -0.294,0.632 -0.59,0.973c-0.296,0.341 -0.62,0.76 -0.886,1.022c-0.296,0.291 -0.603,0.606 -0.259,1.19c0.344,0.584 1.529,2.493 3.285,4.039c2.255,1.986 4.158,2.602 4.748,2.894c0.59,0.292 0.935,0.243 1.279,-0.146c0.344,-0.39 1.476,-1.703 1.869,-2.286c0.393,-0.583 0.787,-0.487 1.329,-0.292c0.542,0.194 3.445,1.604 4.035,1.896c0.59,0.292 0.984,0.438 1.132,0.681c0.148,0.242 0.148,1.41 -0.344,2.771z"></path></g></g></svg>
+        </a>
+    </div>
+    <p id="repository-link">Esta página-web é de código aberto. Clique <a href="https://github.com/juletopi/Pagina_Calculadora_de_Soma_Simples" target="_blank">aqui</a> para acessar o repositório com o código-fonte.</p>
+</footer>
+
+<!-- Scripts JavaScript -->
+<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="src/js/script.js"></script>
+</body>
+</html>
+```
+
+#### CSS (reset.css):
+```css
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+```
+
+#### CSS (style.css):
+```css
+body {
+    background-color: #dee0e2;
+    font-family: 'Arial', sans-serif;
+    color: #343a40;
+}
+
+#asterisco {
+    color: #e72525;
+}
+
+/* Container principal */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-width: 170px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: #007bff;
+    text-align: center;
+}
+
+/* Formulário */
+.form-group label {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #495057;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Feedback de erro */
+.invalid-feedback {
+    font-size: 0.875rem;
+    color: #dc3545;
+}
+
+/* Botão de submissão */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 600;
+    padding: 10px 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    background-color: #0e0e0e;
+    color: #c5c5c5;
+    margin-top: 60px;
+}
+
+.footer p {
+    padding-bottom: 10px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#my-links {
+    margin-top: -45px;
+}
+
+.personal-social-icons {
+    margin-top: -8px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.personal-social-icons a svg path {
+    fill: #9e9e9e;
+    transition: fill 0.3s ease-in-out;
+}
+
+.personal-social-icons a svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+#facebook-icon:hover svg path {
+    fill: #3b5998;
+}
+
+#instagram-icon:hover svg path {
+    fill: #e1306c;
+}
+
+#linkedin-icon:hover svg path {
+    fill: #0077b5;
+}
+
+#github-icon:hover svg path {
+    fill: #333333;
+}
+
+#whatsapp-icon:hover svg path {
+    fill: #25d366;
+}
+
+.personal-social-icons a:hover svg {
+    transform: scale(1.2);
+}
+
+#repository-link {
+    color: #7a7a7a;
+    background-color: #030303;
+    font-family: Verdana;
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+}
+
+#repository-link a {
+    color: #007bff;
+}
+
+#repository-link:hover a {
+    color: #0056b3;
+}
+```
+
+#### CSS (pseudoElementsStyles.css):
+```css
+::-webkit-scrollbar {
+    background-color: #a5a8aa;
+    width: 10px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 8px;
+}
+
+::selection {
+    background-color: #0a57a89d;
+    color: #ffffff;
+}
+```
+
+#### CSS (responsive.css):
+```css
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    img {
+        max-width: 140px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+
+    .footer p {
+        font-size: 13px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -25px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 26px;
+    }
+
+    #repository-link {
+        margin-top: -10px;
+        font-size: 9px;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 767px) {
+    img {
+        max-width: 120px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+
+    .footer p {
+        font-size: 11px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -25px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 22px;
+    }
+
+    #repository-link {
+        margin-top: -15px;
+        font-size: 9px;
+    }
+}
+```
+
+#### JavaScript:
+```js
+/*
+    function demostrarRegexCPF(cpf){
+        const regex = /\d(3)\.\d(3).\d(3)\-\d(2)/;
+        const resultado = regex.exec(cpf);
+    
+        if(resultado){
+            console.log('Texto $(cpf)');
+            console.log('CPF válido: ');
+            console.log(resultado[0]);
+        }else{
+            console.log('Texto $(cpf)');
+            console.log('CPF inválido: ');
+        }
+    }
+*/
+
+$(document).ready(function () {
+    // Resetando mensagens de erro
+    $('#meuFormulario').on('submit', function (event) {
+        event.preventDefault();
+        $('.form-control').removeClass('is-invalid');
+
+        let isValid = true;
+
+        // Validação do nome (apenas letras e espaços)
+        const nome = $('#nome').val().trim();
+        if (!/^[a-zA-Z\s]+$/.test(nome)) {
+            $('#nome').addClass('is-invalid');
+            isValid = false;
+        }
+
+        // Validação do email
+        const email = $('#email').val().trim();
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            $('#email').addClass('is-invalid');
+            isValid = false;
+        }
+
+        // Validação da senha
+        const senha = $('#senha').val().trim();
+        if (senha.length < 8 || !/[a-zA-Z]/.test(senha) || !/[0-9]/.test(senha)) {
+            $('#senha').addClass('is-invalid');
+            isValid = false;
+        }
+
+        // Validação da confirmação da senha
+        const confirmarSenha = $('#confirmarSenha').val().trim();
+        if (confirmarSenha !== senha) {
+            $('#confirmarSenha').addClass('is-invalid');
+            isValid = false;
+        }
+
+        // Máscara e validação do campo Telefone
+        $('#telefone').on('input', function () {
+            let telefone = $(this).val().replace(/\D/g, '').substring(0, 11);
+            telefone = telefone.replace(/^(\d{2})(\d)/g, '($1) $2');
+            telefone = telefone.replace(/(\d{5})(\d{4})$/, '$1-$2');
+            $(this).val(telefone);
+
+            const telefonePattern = /^\(\d{2}\) \d{5}-\d{4}$/;
+            if (telefonePattern.test(telefone)) {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+            } else {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+            }
+        });
+
+        // Máscara e validação do campo CPF
+        $('#cpf').on('input', function () {
+            let cpf = $(this).val().replace(/\D/g, '').substring(0, 11);
+            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+            cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            $(this).val(cpf);
+
+            if (validarCPF(cpf)) {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+            } else {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+            }
+        });
+
+        // Função de validação do CPF
+        function validarCPF(cpf) {
+            cpf = cpf.replace(/\D/g, '');
+            if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+
+            let soma = 0, resto;
+            for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
+            resto = 11 - (soma % 11);
+            let digitoVerificador1 = (resto === 10 || resto === 11) ? 0 : resto;
+            if (digitoVerificador1 !== parseInt(cpf.charAt(9))) return false;
+
+            soma = 0;
+            for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
+            resto = 11 - (soma % 11);
+            let digitoVerificador2 = (resto === 10 || resto === 11) ? 0 : resto;
+            return digitoVerificador2 === parseInt(cpf.charAt(10));
+        }
+
+        // Validação final do formulário
+        const form = $(this)[0];
+        if (!form.checkValidity() || !isValid) {
+            event.stopPropagation();
+            $(form).addClass('was-validated');
+        } else {
+            alert('Formulário válido! Pronto para ser enviado.');
+            this.submit();
+        }
+    });
+});
+```
+
+### 🖼️ Imagem da página
+
+> <a href="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-BOOTSTRAP_Aula03-pic.jpeg"><img src="https://github.com/juletopi/Programacao_Web/blob/main/Assets/Pagina_HTML-CSS-JAVASCRIPT-JQUERY-BOOTSTRAP_Aula03-pic.jpeg" alt="WebPageView" title="Visualização da Página Inteira" style="width: 60%;"></a>
 
 <div align="left">
   <h6><a href="#programação-web-"> Voltar para o início ↺</a></h6>
