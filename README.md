@@ -51,6 +51,9 @@
     <a href="https://www.w3schools.com/jquery/">
         <img src="https://img.shields.io/badge/Made%20with%20library:-jQuery%20-gray.svg?colorA=16537e&amp;colorB=0d3b5c&amp;style=for-the-badge" alt="jQueryLibrary-badge" style="max-width: 100%;">
     </a>
+    <a href="https://www.w3schools.com/bootstrap/bootstrap_get_started.asp">
+        <img src="https://img.shields.io/badge/Made%20with%20library:-Bootstrap%20-gray.svg?colorA=8C1AFF&amp;colorB=6908cc&amp;style=for-the-badge" alt="Bootstarp-badge" style="max-width: 100%;">
+    </a>
 </div>
 
 <!-- SUMMARY -->
