@@ -1794,7 +1794,7 @@ $(document).ready(function(){
 
 > [!NOTE]\
 > *Retirado da aula de "[CodigoAula03](https://github.com/juletopi/Programacao_Web/tree/main/CodigoAula3)"*\
-> *Link do repositório do projeto original: [static-website by Prof-Karan-Luciano](https://github.com/Desenvolvimento-WEB-I-2024-2/static-website)*
+> *Link do repositório do projeto original: [Aula3 by Prof-Karan-Luciano](https://github.com/Desenvolvimento-WEB-I-2024-2/Aula3)*
 
 <div align="left">
 
