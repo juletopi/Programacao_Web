@@ -1,0 +1,69 @@
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    img {
+        max-width: 140px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+
+    .botaoRemover {
+        font-size: 16px;
+    }
+
+    .footer p {
+        font-size: 13px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -5px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 26px;
+    }
+
+    #repository-link {
+        margin-top: -10px;
+        font-size: 9px;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 767px) {
+    img {
+        max-width: 120px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+
+    .botaoRemover {
+        font-size: 14px;
+    }
+
+    .footer p {
+        font-size: 11px;
+        padding-top: 16px;
+    }
+
+    #my-links {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-top: -10px;
+    }
+    
+    .personal-social-icons svg {
+        max-width: 22px;
+    }
+
+    #repository-link {
+        margin-top: -15px;
+        font-size: 9px;
+    }
+}

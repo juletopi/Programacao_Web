@@ -1,0 +1,186 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e1e3e7;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-width: 170px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #dddddd;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #a29bfe;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 20px;
+    background-color: #6c5ce7;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4439ac;
+}
+
+button span {
+    display: block;
+    transform: translateY(-2px);
+}
+
+.botaoRemover:hover {
+    background-color: #c0392b;
+    color: #ffffff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+li button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: #e74c3c;
+    cursor: pointer;
+}
+
+li button:hover {
+    color: #c0392b;
+}
+
+.footer {
+    background-color: #0e0e0e;
+    color: #c5c5c5;
+    margin-top: 60px;
+}
+
+.footer p {
+    padding-bottom: 10px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#my-links {
+    margin-top: -25px;
+}
+
+.personal-social-icons {
+    margin-top: 10px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.personal-social-icons a svg path {
+    fill: #9e9e9e;
+    transition: fill 0.3s ease-in-out;
+}
+
+.personal-social-icons a svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+#facebook-icon:hover svg path {
+    fill: #3b5998;
+}
+
+#instagram-icon:hover svg path {
+    fill: #e1306c;
+}
+
+#linkedin-icon:hover svg path {
+    fill: #0077b5;
+}
+
+#github-icon:hover svg path {
+    fill: #333333;
+}
+
+#whatsapp-icon:hover svg path {
+    fill: #25d366;
+}
+
+.personal-social-icons a:hover svg {
+    transform: scale(1.2);
+}
+
+#repository-link {
+    color: #7a7a7a;
+    background-color: #030303;
+    font-family: Verdana;
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+}
+
+#repository-link a {
+    color: #6c5ce7;
+}
+
+#repository-link:hover a {
+    color: #5ca8e7;
+}
